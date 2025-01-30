@@ -3,11 +3,24 @@ import styles from '../page.module.css'
 
 export default function HomeContent({searchQuery, setSearchQuery, handleLogin, handleLogout, session}: {searchQuery: string, setSearchQuery: (searchQuery: string) => void, handleLogin: () => void, handleLogout: () => void, session: any}) {
 
-    function handleSubmitSearch(): void {
+    async function handleSubmitSearch(): Promise<void> {
         console.log("submit search", searchQuery);
         // setSearchQuery("");
         alert("submit search: " + searchQuery);
+
+        const data = await callTheAI(searchQuery);
+        console.log("ai data", data);
     }
+    const callTheAI = async (prompt: string) => {
+      const response = await fetch("/api/ai", {
+        method: "POST",
+        body: JSON.stringify({ prompt }),
+      })
+      const data = await response.json();
+      console.log(data);
+      return data;
+    }
+
     const handleGoogleLogin = () => {
         handleLogin();
     }
