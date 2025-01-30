@@ -1,8 +1,9 @@
 import Image from 'next/image'
 import styles from '../page.module.css'
+import { useState } from 'react';
 
 export default function HomeContent({searchQuery, setSearchQuery, handleLogin, handleLogout, session}: {searchQuery: string, setSearchQuery: (searchQuery: string) => void, handleLogin: () => void, handleLogout: () => void, session: any}) {
-
+    const [result, setResult] = useState<string>("");
     async function handleSubmitSearch(): Promise<void> {
         console.log("submit search", searchQuery);
         // setSearchQuery("");
@@ -10,6 +11,7 @@ export default function HomeContent({searchQuery, setSearchQuery, handleLogin, h
 
         const data = await callTheAI(searchQuery);
         console.log("ai data", data);
+        setResult(data.choices[0].message.content);
     }
     const callTheAI = async (prompt: string) => {
       const response = await fetch("/api/ai", {
@@ -91,7 +93,12 @@ export default function HomeContent({searchQuery, setSearchQuery, handleLogin, h
           <p>Explore the Next.js 13 playground.</p>
         </a>
 
-        <a
+        <div
+          className={styles.card}
+        >
+          {result}
+        </div>
+        {/* <a
           href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           className={styles.card}
           target="_blank"
@@ -103,7 +110,7 @@ export default function HomeContent({searchQuery, setSearchQuery, handleLogin, h
           <p>
             Instantly deploy your Next.js site to a shareable URL with Vercel.
           </p>
-        </a>
+        </a> */}
       </div>
     </main>
   )
