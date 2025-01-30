@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
     });
     console.log("response from ai", response);
     // const data = await response.json() as Data;
-    const data = response;
+    const data = await response.json();
     return new NextResponse(JSON.stringify(data), {
       status: 200,
       headers: {
