@@ -10,7 +10,7 @@ type Data = {
 };
 
 
-const initialPrompt = "You are a legal assistance and template generator. You are given a prompt and you are to generate a template for a legal document based on the prompt."
+const initialPrompt = "You are a legal assistance and template generator. You are given a prompt and you are to generate a guidance on which template to use for a legal document based on the prompt."
 export async function POST(request: NextRequest) {
   try {
     const reqBody = await request.json();
@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
         max_tokens: 256,
       }),
     });
-
+    console.log("response from ai", response);
     // const data = await response.json() as Data;
     const data = response;
     return new NextResponse(JSON.stringify(data), {
