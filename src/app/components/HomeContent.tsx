@@ -2,12 +2,16 @@ import Image from 'next/image'
 import styles from '../page.module.css'
 import { useState } from 'react';
 import GoogleLoginButton from '../dom/GoogleLoginButton';
-
+const EXAMPLE_RESULT = "There are possibly two types of legal document templates you may be interested in: 1. Student Loan Agreement Template: If you're looking to draft an agreement between a lender and a student, a student loan agreement template would be appropriate. This document outlines the terms and conditions of the loan, including the interest rate, payment terms, default provisions and any other relevant information. 2. Student Loan Repayment Agreement Template: If the student borrower is arranging a repayment plan with the lender, then a student loan repayment agreement would be a suitable template. This outlines how the borrower intends to pay back the loan, including the period of time, the amount of each payment, and what happens if a payment is missed";  
 export default function HomeContent({searchQuery, setSearchQuery, handleLogin, handleLogout, session}: {searchQuery: string, setSearchQuery: (searchQuery: string) => void, handleLogin: () => void, handleLogout: () => void, session: any}) {
     const [result, setResult] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(false);
 
     async function handleSubmitSearch(): Promise<void> {
+      if (searchQuery === ""  ) {
+        alert("Please enter a search query");
+        return;
+      }
         setLoading(true);
         try {
             console.log("submit search", searchQuery);
@@ -16,7 +20,7 @@ export default function HomeContent({searchQuery, setSearchQuery, handleLogin, h
                 alert("Please login to search");
                 // Add 1 second delay
                 await new Promise(resolve => setTimeout(resolve, 3000));
-                setResult("There are possibly two types of legal document templates you may be interested in: 1. Student Loan Agreement Template: If you're looking to draft an agreement between a lender and a student, a student loan agreement template would be appropriate. This document outlines the terms and conditions of the loan, including the interest rate, payment terms, default provisions and any other relevant information. 2. Student Loan Repayment Agreement Template: If the student borrower is arranging a repayment plan with the lender, then a student loan repayment agreement would be a suitable template. This outlines how the borrower intends to pay back the loan, including the period of time, the amount of each payment, and what happens if a payment is missed");
+                setResult(EXAMPLE_RESULT);
                 return;
             }
 
@@ -118,8 +122,11 @@ export default function HomeContent({searchQuery, setSearchQuery, handleLogin, h
 
       {!loading && result && (
         <div className='flex-col mt-8 px-4'>
-            <div className='flex-col bg-b-90 bord-r-25 px-4 py-3'>
-                {/* <div>Results</div> */}
+            <div className='flex-col flex-align-start bg-b-90 bord-r-25 px-4 py-3'>
+                {/* show Example Result as prefix if hardcoded result if its the same as the result */}
+                {result === EXAMPLE_RESULT && (
+                    <div>Example Result</div>
+                )}
                 <div>
                     {result}
                 </div>
