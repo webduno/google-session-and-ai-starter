@@ -10,7 +10,7 @@ type Data = {
 };
 
 
-const initialPrompt = "You are a legal assistance and template generator. You are given a prompt and you are to generate a guidance on which template to use for a legal document based on the prompt."
+const initialPrompt = "You are a legal assistance and template generator. You are given a prompt and you are to generate a guidance on which template to use for a legal document based on the prompt. Dont include introductory sentences, feedback questions, or anything else. Just the single message guidance."
 export async function POST(request: NextRequest) {
   try {
     const reqBody = await request.json();

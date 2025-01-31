@@ -10,6 +10,12 @@ export default function HomeContent({searchQuery, setSearchQuery, handleLogin, h
         // setSearchQuery("");
         alert("submit search: " + searchQuery);
 
+        if (!session) {
+          alert("Please login to search");
+          setResult("there are possibly two types of legal document templates you may be interested in: 1. Student Loan Agreement Template: If you're looking to draft an agreement between a lender and a student, a student loan agreement template would be appropriate. This document outlines the terms and conditions of the loan, including the interest rate, payment terms, default provisions and any other relevant information. 2. Student Loan Repayment Agreement Template: If the student borrower is arranging a repayment plan with the lender, then a student loan repayment agreement would be a suitable template. This outlines how the borrower intends to pay back the loan, including the period of time, the amount of each payment, and what happens if a payment is missed")
+            return;
+        }
+
         const data = await callTheAI(searchQuery);
         console.log("ai data", data);
         setResult(data.choices[0].message.content);
@@ -86,7 +92,7 @@ export default function HomeContent({searchQuery, setSearchQuery, handleLogin, h
 
 <div className='w-100 mt-100 Q_md_x'></div>
 <div className='w-100 mt-100 '><hr className='w-50 opaci-20' /></div>
-      <div className={" flex-wrap "}>
+      <div className={" flex-wrap flex-justify-start"}>
         <a
           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           className={"px-2 tx-white nodeco opaci-chov--50"}
