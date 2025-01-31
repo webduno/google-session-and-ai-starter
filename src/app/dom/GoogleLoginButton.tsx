@@ -15,7 +15,7 @@ if (session) {
       className='bg-trans tx-white noborder pa-2 opaci-chov--50 flex-col' 
       onClick={handleProfile}
     >
-      <img className="w-50px h-50px bord-r-100" src={session?.image || "https://i.pravatar.cc/150?img=14"} alt="Profile" />
+      <img className="w-50px h-50px bord-r-100" src={session?.user?.image || "https://i.pravatar.cc/150?img=14"} alt="Profile" />
     </button>
   );
 }
