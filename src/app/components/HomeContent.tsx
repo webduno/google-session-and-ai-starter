@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import styles from '../page.module.css'
 import { useState } from 'react';
+import GoogleLoginButton from '../dom/GoogleLoginButton';
 
 export default function HomeContent({searchQuery, setSearchQuery, handleLogin, handleLogout, session}: {searchQuery: string, setSearchQuery: (searchQuery: string) => void, handleLogin: () => void, handleLogout: () => void, session: any}) {
     const [result, setResult] = useState<string>("");
@@ -32,11 +33,7 @@ export default function HomeContent({searchQuery, setSearchQuery, handleLogin, h
     style={{background: "linear-gradient(180deg, #00000077, #36373A, #00000000)"}}
     >
       <div className={"flex-align-self-end"} >
-          
-          <button className='bg-trans tx-white noborder pa-2 opaci-chov--50 flex-col' onClick={handleGoogleLogin}>
-        <div className='underline '><div className='tx-lg'>Login</div>  <div>With Google</div></div>
-            
-          </button>
+          <GoogleLoginButton handleLogin={handleLogin} session={session} handleLogout={handleLogout} />
       </div>
 
       <div className={"" + " flex-col z-100 pos-rel mt-8"}>
