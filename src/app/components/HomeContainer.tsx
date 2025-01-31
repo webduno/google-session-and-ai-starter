@@ -14,7 +14,7 @@ export default function HomeContainer() {
   const handleLogout = () => signOut();
   const [searchQuery, setSearchQuery] = useState("");
   return (
-    <div className="home-container">
+    <div className="w-100">
       <HomeContent
        handleLogin={handleLogin}
        handleLogout={handleLogout}

@@ -28,79 +28,110 @@ export default function HomeContent({searchQuery, setSearchQuery, handleLogin, h
     }
 
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
+    <main className={" flex-col tx-white z-1 pos-rel w-100"}  
+    style={{background: "linear-gradient(180deg, #00000077, #36373A, #00000000)"}}
+    >
+      <div className={"flex-align-self-end"} >
           
-          <button onClick={handleGoogleLogin}>Login with Google</button>
-        </div>
+          <button className='bg-trans tx-white noborder pa-2 opaci-chov--50 flex-col' onClick={handleGoogleLogin}>
+        <div className='underline '><div className='tx-lg'>Login</div>  <div>With Google</div></div>
+            
+          </button>
       </div>
 
-      <div className={styles.center + " flex-col z-100 pos-rel"}>
+      <div className={"" + " flex-col z-100 pos-rel mt-8"}>
         {/* <Image
-          className={styles.logo}
+          className={""}
           src="/next.svg"
           alt="Next.js Logo"
           width={180}
           height={37}
           priority
         /> */}
-        <div>Find legal templates quickly and easily.</div>
-        <div className='flex-col'>
-            <input className='z-200' type="text" placeholder="Enter your question" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
-            <button className='z-200' onClick={handleSubmitSearch}>Submit</button>
+        <div className='tx-bold-2 flex-col'>
+          <div>Find any</div>
+          <div>legal templates </div>
+          <div>quickly and easily.</div>
+        </div>
+        <div className='flex-row gap-2 mt-2'>
+            <input
+            className='z-200 bg-w-10 px-4 noborder py-2 bord-r-25 tx-lg tx-white'
+            type="text" 
+            placeholder="Enter your question" 
+            value={searchQuery} 
+            onChange={(e) => setSearchQuery(e.target.value)} 
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                handleSubmitSearch();
+              }
+            }}
+            />
+            <button
+            style={{
+              background: "linear-gradient(45deg, #2DD8EA, #04DD43)",
+              // textShadow: "-1px -1px 1px #ffffff",
+              // background: "linear-gradient(180deg, #00000077, #36373A, #00000000)"
+            }}
+             className='z-200 bg-b-50 noborder px-3 tx-xl tx-white tx-ls-1 bord-r-25 pb-2 opaci-chov--50 tx-'
+             onClick={handleSubmitSearch}>➡</button>
         </div>
       </div>
+        
+      {result && (
+        <div className='flex-col mt-8'>
+          <div>Results</div>
+          <div>
+            {result}
+          </div>
+        </div>
+      )}
 
-      <div className={styles.grid}>
+<div className='w-100 mt-200'><hr className='w-50 opaci-20' /></div>
+      <div className={" flex-wrap"}>
         <a
           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
+          className={"px-2 tx-white nodeco opaci-chov--50"}
           target="_blank"
           rel="noopener noreferrer"
         >
           <h2>
             Docs <span>-&gt;</span>
           </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
+          <p className="w-200px">Find in-depth information about Next.js features and API.</p>
         </a>
 
         <a
           href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
+          className={"px-2 tx-white nodeco opaci-chov--50"}
           target="_blank"
           rel="noopener noreferrer"
         >
           <h2>
             Learn <span>-&gt;</span>
           </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
+          <p className="w-200px">Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
         </a>
 
         <a
           href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
+          className={"px-2 tx-white nodeco opaci-chov--50"}
           target="_blank"
           rel="noopener noreferrer"
         >
           <h2>
             Templates <span>-&gt;</span>
           </h2>
-          <p>Explore the Next.js 13 playground.</p>
+          <p className="w-200px">Explore the Next.js 13 playground.</p>
         </a>
 
         <div
-          className={styles.card}
+          className={""}
         >
           {result}
         </div>
         {/* <a
           href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
+          className={"px-2 tx-white nodeco opaci-chov--50"}
           target="_blank"
           rel="noopener noreferrer"
         >
