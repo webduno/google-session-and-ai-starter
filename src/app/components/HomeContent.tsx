@@ -82,11 +82,13 @@ export default function HomeContent({searchQuery, setSearchQuery, handleLogin, h
       </div>
         
       {result && (
-        <div className='flex-col mt-8'>
+        <div className='flex-col mt-8 px-4'>
+        <div className='flex-col bg-b-90  bord-r-25 px-4 py-3'>
           <div>Results</div>
           <div>
             {result}
           </div>
+        </div>
         </div>
       )}
 
