@@ -28,7 +28,7 @@ export default function HomeContent({searchQuery, setSearchQuery, handleLogin, h
     }
 
   return (
-    <main className={" flex-col tx-white z-1 pos-rel w-100 h-100vh"}  
+    <main className={" flex-col tx-white z-1 pos-rel w-100 h-100vh flex-justify-start"}  
     style={{background: "linear-gradient(180deg, #00000077, #36373A, #00000000)"}}
     >
       <div className={"flex-align-self-end"} >
@@ -103,7 +103,7 @@ export default function HomeContent({searchQuery, setSearchQuery, handleLogin, h
 
         <a
           href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={"px-2 tx-white nodeco opaci-chov--50 Q_md_x"}
+          className={"px-2 tx-white nodeco opaci-chov--50 Q _md_x"}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -115,7 +115,7 @@ export default function HomeContent({searchQuery, setSearchQuery, handleLogin, h
 
         <a
           href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={"px-2 tx-white nodeco opaci-chov--50 Q_md_x"}
+          className={"px-2 tx-white nodeco opaci-chov--50 Q _md_x"}
           target="_blank"
           rel="noopener noreferrer"
         >
