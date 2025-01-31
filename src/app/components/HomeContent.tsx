@@ -33,7 +33,7 @@ export default function HomeContent({searchQuery, setSearchQuery, handleLogin, h
     style={{background: "linear-gradient(180deg, #00000077, #36373A, #00000000)"}}
     >
       <div className={"flex-align-self-end"} >
-        <pre>{JSON.stringify(session, null, 2)}</pre>
+        {/* <pre>{JSON.stringify(session, null, 2)}</pre> */}
         <GoogleLoginButton handleLogin={handleLogin} session={session} handleLogout={handleLogout} />
       </div>
 
