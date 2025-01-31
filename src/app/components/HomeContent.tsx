@@ -93,7 +93,7 @@ export default function HomeContent({searchQuery, setSearchQuery, handleLogin, h
       )}
 
 <div className='w-100 mt-100 Q_md_x'></div>
-<div className='w-100 mt-100 '><hr className='w-50 opaci-20' /></div>
+<div className='w-100 mt-200 '><hr className='w-50 opaci-20' /></div>
       <div className={" flex-wrap flex-justify-start"}>
         <a
           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
