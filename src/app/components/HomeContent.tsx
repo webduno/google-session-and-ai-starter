@@ -29,7 +29,15 @@ export default function HomeContent({searchQuery, setSearchQuery, handleLogin, h
       console.log(data);
       return data;
     }
-
+    const handleReset = () => {
+        setResult("");
+        setSearchQuery("");
+        // set focus to the input
+        const input = document.querySelector('input');
+        if (input) {
+          input.focus();
+        }
+    }
     const handleGoogleLogin = () => {
         handleLogin();
     }
@@ -70,6 +78,8 @@ export default function HomeContent({searchQuery, setSearchQuery, handleLogin, h
               }
             }}
             />
+            <div className='flex-wrap gap-2'>
+              
             <button
             style={{
               background: "linear-gradient(45deg, #2DD8EA, #04DD43)",
@@ -78,6 +88,16 @@ export default function HomeContent({searchQuery, setSearchQuery, handleLogin, h
             }}
              className='z-200 bg-b-50 noborder px-3 tx-xl tx-white tx-ls-1 bord-r-25 pb-2 opaci-chov--50 tx-'
              onClick={handleSubmitSearch}>➡</button>
+             
+            <button
+            style={{
+              // background: "linear-gradient(45deg, #2DD8EA, #04DD43)",
+              // textShadow: "-1px -1px 1px #ffffff",
+              // background: "linear-gradient(180deg, #00000077, #36373A, #00000000)"
+            }}
+             className='z-200 bg-b-50 noborder px-3 tx-lg tx-white tx-ls-1 bord-r-25 py-1 opaci-chov--50 tx-'
+             onClick={handleReset}>Reset</button>
+            </div>
         </div>
       </div>
         
