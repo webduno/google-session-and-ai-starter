@@ -14,7 +14,8 @@ export default function HomeContainer() {
   const handleLogout = () => signOut();
   const [searchQuery, setSearchQuery] = useState("");
   return (
-    <div className="w-100">
+    <div className="w-100 noverflow pos-rel flex-col flex-justify-start">
+        <img src="/wireframegrid_roof2.jpg" alt="" className='h-100 left-0 top-0 pos-abs opaci-50' />
       <HomeContent
        handleLogin={handleLogin}
        handleLogout={handleLogout}

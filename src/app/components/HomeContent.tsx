@@ -28,7 +28,7 @@ export default function HomeContent({searchQuery, setSearchQuery, handleLogin, h
     }
 
   return (
-    <main className={" flex-col tx-white z-1 pos-rel w-100"}  
+    <main className={" flex-col tx-white z-1 pos-rel w-100 h-100vh"}  
     style={{background: "linear-gradient(180deg, #00000077, #36373A, #00000000)"}}
     >
       <div className={"flex-align-self-end"} >
@@ -53,7 +53,7 @@ export default function HomeContent({searchQuery, setSearchQuery, handleLogin, h
           <div>legal templates </div>
           <div>quickly and easily.</div>
         </div>
-        <div className='flex-row gap-2 mt-2'>
+        <div className='flex-wrap gap-2 mt-2'>
             <input
             className='z-200 bg-w-10 px-4 noborder py-2 bord-r-25 tx-lg tx-white'
             type="text" 
@@ -86,8 +86,9 @@ export default function HomeContent({searchQuery, setSearchQuery, handleLogin, h
         </div>
       )}
 
-<div className='w-100 mt-200'><hr className='w-50 opaci-20' /></div>
-      <div className={" flex-wrap"}>
+<div className='w-100 mt-100 Q_md_x'></div>
+<div className='w-100 mt-100 '><hr className='w-50 opaci-20' /></div>
+      <div className={" flex-wrap "}>
         <a
           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           className={"px-2 tx-white nodeco opaci-chov--50"}
@@ -97,12 +98,12 @@ export default function HomeContent({searchQuery, setSearchQuery, handleLogin, h
           <h2>
             Docs <span>-&gt;</span>
           </h2>
-          <p className="w-200px">Find in-depth information about Next.js features and API.</p>
+          <p className="w-200px">Find in-depth information<div className='Q_md_x'> about Next.js features and API</div>.</p>
         </a>
 
         <a
           href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={"px-2 tx-white nodeco opaci-chov--50"}
+          className={"px-2 tx-white nodeco opaci-chov--50 Q_md_x"}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -114,7 +115,7 @@ export default function HomeContent({searchQuery, setSearchQuery, handleLogin, h
 
         <a
           href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={"px-2 tx-white nodeco opaci-chov--50"}
+          className={"px-2 tx-white nodeco opaci-chov--50 Q_md_x"}
           target="_blank"
           rel="noopener noreferrer"
         >

@@ -15,15 +15,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={"ma-0 pa-0"} 
+    <html lang="en" className={"ma-0 pa-0 w-100vw h-100vh "} 
     style={{
       // background: "linear-gradient(0deg, #000000, #36373A, #36373A)",
       // backgroundAttachment: "fixed"
       background: "#36373A",
     }}
     >
-      <body className={"ma-0 pa-0 tx-altfont-1 flex-col w-100 noverflow"}>
-        <img src="/wireframegrid_roof2.jpg" alt="" className='h-100 left-0 top-0 pos-abs opaci-50' />
+      <body className={"ma-0 pa-0 tx-altfont-1 flex-col w-100 w-max-100vw noverflow w-100vw h-100vh "}>
         {children}
         </body>
     </html>
