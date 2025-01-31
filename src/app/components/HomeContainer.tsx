@@ -15,7 +15,7 @@ export default function HomeContainer() {
   const [searchQuery, setSearchQuery] = useState("");
   return (
     <div className="w-100 noverflow-x pos-rel flex-col flex-justify-start">
-        <img src="/wireframegrid_roof2.jpg" alt="" className='h-100 left-0 top-0 pos-fix opaci-50' />
+        <img src="/wireframegrid_roof3.jpg" alt="" className='h-100 left-0 top-0 pos-fix opaci-50' />
       <HomeContent
        handleLogin={handleLogin}
        handleLogout={handleLogout}
